@@ -1,0 +1,11 @@
+.navStyle{
+    background: #6db33f !important;
+}
+
+.navStyle .navbar-brand{
+    color: white;
+}
+
+.navStyle .navbar-nav >li>a{
+    color: white;
+}
