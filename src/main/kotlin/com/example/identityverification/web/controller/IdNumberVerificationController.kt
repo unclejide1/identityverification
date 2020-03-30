@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
 @RequestMapping(value = [""])
-class PhoneNumberVerificationController {
+class IdNumberVerificationController {
 
 
     @Autowired

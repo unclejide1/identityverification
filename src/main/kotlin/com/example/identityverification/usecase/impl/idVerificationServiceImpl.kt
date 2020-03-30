@@ -13,11 +13,14 @@ class IdVerificationServiceImpl: IdVerificationService {
 
         var driversLicense: String = """[A-Z]{3}[0-9]{5}[A-Z]"""
         var internationalPassport: String = """[A-Z][0-9]{8}"""
+        var votersCardPattern: String = """([0-9A-Z]{16}?[0-9]{3})|([0-9A-Z]{17}?[0-9]{2})"""
+
+
 
 
 
         val driversLicenseRegex = driversLicense.toRegex()
-
+        val votersCardNumberRegex = votersCardPattern.toRegex()
         val internationalPassportRegex = internationalPassport.toRegex()
 
 
@@ -36,6 +39,13 @@ class IdVerificationServiceImpl: IdVerificationService {
                 return  "$idNumber is a valid International Passport"
             }
         }
+
+        if (idNumberLength == 19){
+            if(votersCardNumberRegex.matches(idNumber)){
+                return  "$idNumber is a valid Voter's card"
+            }
+        }
+
 
 
 
