@@ -24,7 +24,7 @@ class IdVerificationServiceImpl: IdVerificationService {
 
         val idNumberLength = idNumber.length
 
-        if(idNumberLength > 10 || idNumberLength <13 ){
+        if(idNumberLength in 11..12){
             var driverLicenceExtract = idNumber.take(9)
             if(driversLicenseRegex.containsMatchIn(driverLicenceExtract)) {
                 return  "$idNumber is a valid driver's license number"
